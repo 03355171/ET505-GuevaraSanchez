@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Planificador de materiales Guevara Sanchez</title>
+<link rel="stylesheet" href="styles.css"></head>
+<body><main><small>ET505 · Semana 9 · Trabajo individual · amplía la versión de Semana 7</small><h1>Planificador de materiales Guevara Sanchez</h1><p>Organice un pedido de materiales para la «Feria de las emociones», un taller de convivencia escolar con 30 estudiantes ficticios de 1.º de secundaria, con un presupuesto de S/ 180.00. Simulación sin compras ni envíos.</p>
+<section><h2>Retos de la Semana 7 (resueltos)</h2><ol><li>TODO 1 (resuelto): calcular el total en céntimos.</li><li>TODO 2 (resuelto): rechazar el pedido que supera el presupuesto.</li><li>TODO 3 (resuelto): reutilizar la validación al comprobar.</li></ol><p>Los tres pendientes de la plantilla ya están completos en app.js. La Semana 9 amplía el proyecto con el kardex que aparece más abajo.</p></section>
+<section><h2>Preparar un pedido</h2><form id="formulario" novalidate><label for="material">Material educativo</label><input id="material" maxlength="60" placeholder="Ejemplo: papelógrafos" autocomplete="off"><div class="grid"><div><label for="cantidad">Cantidad de unidades</label><input id="cantidad" type="number" min="1" max="30" step="1"></div><div><label for="precio">Precio por unidad en soles</label><input id="precio" type="number" min="0.01" max="50" step="0.01"></div></div><button id="comprobar" type="button">Comprobar pedido</button><button type="submit">Confirmar simulación</button><p id="mensaje" role="status" aria-live="polite"></p></form><h2>Último pedido válido</h2><p id="vacio">Todavía no ha confirmado un pedido.</p><div id="ficha" hidden></div><button id="limpiar" type="button">Limpiar</button></section><section id="kardex" aria-labelledby="k-titulo">
+ <h2 id="k-titulo">Kardex de materiales ficticios</h2>
+ <p>Las existencias físicas son independientes del presupuesto del pedido.</p>
+ <form id="k-material-form" novalidate>
+  <label class="etiqueta-kardex" for="k-nombre">Nombre del material de almacén</label>
+  <input id="k-nombre" maxlength="60" required>
+  <button>Crear material</button>
+ </form>
+ <label for="k-buscar">Buscar por nombre o código</label><input id="k-buscar">
+ <label for="k-material">Material seleccionado</label><select id="k-material"></select>
+ <p>Existencia: <strong id="k-saldo">0</strong></p>
+ <button id="k-renombrar" type="button">Cambiar nombre</button>
+ <button id="k-retirar" type="button">Eliminar sin movimientos o inactivar</button>
+ <form id="k-mov-form" novalidate>
+  <label for="k-tipo">Movimiento</label>
+  <select id="k-tipo"><option>ENTRADA</option><option>SALIDA</option></select>
+  <label for="k-cantidad">Cantidad entera positiva</label><input id="k-cantidad" type="number" min="1" step="1" required>
+  <button>Registrar movimiento</button>
+ </form>
+ <button id="k-exportar" type="button">Exportar CSV</button>
+ <p id="k-mensaje" role="status" aria-live="polite"></p>
+ <div class="tabla-scroll"><table><thead><tr><th>Fecha</th><th>Código</th><th>Material</th><th>Tipo</th><th>Cantidad</th></tr></thead><tbody id="k-filas"></tbody></table></div>
+ <p>Datos guardados sólo en este navegador y origen. CSV es una copia, no sincronización con Excel.</p>
+</section>
+
+<small>Use datos ficticios. El pedido del planificador sólo permanece en esta pestaña y se pierde al recargar; el kardex se guarda únicamente en este navegador (localStorage).</small></main>
+<script src="app.js"></script>
+<script src="kardex.js"></script></body></html>
