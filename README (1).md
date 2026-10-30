@@ -20,8 +20,8 @@ Amplía mi Planificador de materiales de la Semana 7 (pedido ficticio para la «
 - **Uso del kardex:** crear un material → elegirlo en la lista (o buscarlo por nombre/código) → registrar ENTRADA o SALIDA con una cantidad entera positiva → revisar la existencia → «Exportar CSV» descarga `movimientos-materiales.csv` (se abre en Excel).
 
 ## Publicación
-- Repositorio: https://github.com/03355171/et505-planificador
-- Sitio GitHub Pages: https://03355171.github.io/et505-planificador/
+- Repositorio: https://github.com/03355171/ET505-GuevaraSanchez
+- Sitio GitHub Pages: https://03355171.github.io/ET505-GuevaraSanchez/
 
 ## Pruebas
 Se comprobaron 24 casos (19 del kardex y 5 del planificador de S7): entrada 10 y salida 3 dejan 7; salida 8 se rechaza y conserva 7; cero, negativo y decimal se rechazan; búsqueda sin coincidencia y búsqueda vacía no cambian datos; editar por id conserva otro material con el mismo nombre; cancelar la eliminación conserva el estado; inactivar conserva el historial; recargar conserva los datos; el CSV muestra los movimientos y cantidades correctos. La tabla completa (entrada, esperado, obtenido y corrección) está en el PDF entregado en MAXEDRA.
